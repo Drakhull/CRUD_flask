@@ -1,0 +1,29 @@
+<html>
+  <head>
+    <style>
+      ul {
+        list-style-type: none;
+        padding: 0;
+      }
+
+      li {
+        border: 1px solid #ddd;
+        margin: 5px;
+        padding: 10px;
+      }
+
+      a {
+        margin-left: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <ul>
+      <li>
+        {{u.name}} - {{u.birth}} - {{u.gender}} - {{u.cpf}} - {{u.register}}
+        <a href="/users/update/{{u.id}}">edit</a>
+        <a href="/users/delete/{{u.id}}">delete</a>
+      </li>
+    </ul>
+  </body>
+</html>

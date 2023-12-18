@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        li {
+            border: 1px solid #ddd;
+            margin: 5px;
+            padding: 10px;
+            text-align: center; /* Centraliza o conteúdo da li */
+        }
+
+        h2 {
+            color: #333;
+        }
+
+        form {
+            max-width: 400px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        input[type="text"] {
+            width: 70%; /* Ajuste conforme necessário */
+            padding: 10px;
+            margin-bottom: 15px;
+            box-sizing: border-box;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        input[type="submit"] {
+            background-color: #5cb85c; /* Verde */
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #4cae4c; /* Verde mais escuro ao passar o mouse */
+        }
+
+        a[name="return"] {
+            background-color: #d9534f;
+            color: white;
+            padding: 10px 15px;
+            text-decoration: none;
+            border-radius: 4px;
+            display: inline-block;
+            margin-top: 15px; /* Espaço acima do botão Return */
+        }
+
+        a[name="return"]:hover {
+            background-color: #c9302c;
+        }
+    </style>
+</head>
+<body>
+    <ul>
+        <li>
+            <h2>Student registry: </h2>
+            <form method="POST" action="{{ url_for('Users.search_student') }}">
+                <input type="text" name="register" pattern="[0-9]{11}" required>
+                <input type="submit" value="Search">
+                <a href="/" name="return">Return</a>
+            </form>
+        </li>
+    </ul>
+</body>
+</html>

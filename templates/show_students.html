@@ -1,0 +1,72 @@
+<html>
+  <head>
+    <style>
+      body {
+        font-family: 'Arial', sans-serif;
+        background-color: #f4f4f4;
+        margin: 0;
+        padding: 0;
+      }
+
+      ul {
+        list-style-type: none;
+        padding: 20px;
+        margin: 20px auto;
+        max-width: 600px;
+        background-color: #fff;
+        border-radius: 8px;
+        box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+      }
+
+      li {
+        border-bottom: 1px solid #ddd;
+        padding: 10px;
+      }
+
+      li:last-child {
+        border-bottom: none;
+      }
+
+      span {
+        font-weight: bold;
+        margin-right: 5px;
+      }
+
+      form {
+        max-width: 400px;
+        margin: 20px auto;
+        padding: 20px;
+        background-color: #fff;
+        border-radius: 5px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      }
+
+      a[name="return"] {
+        background-color: #d9534f;
+        color: white;
+        padding: 10px 15px;
+        text-decoration: none;
+        border-radius: 4px;
+        display: inline-block;
+      }
+
+      a[name="return"]:hover {
+        background-color: #c9302c;
+      }
+    </style>
+  </head>
+  <body>
+    <ul>
+      {% for u in users %}
+        <li>
+          <span>Name:</span>{{u.name}}<br>
+          <span>Birth:</span>{{u.birth}}<br>
+          <span>Gender:</span>{{u.gender}}<br>
+          <span>CPF:</span>{{u.cpf}}<br>
+          <span>Register:</span>{{u.register}}
+        </li>
+      {% endfor %}
+      <a href="/" name="return">Return</a>
+    </ul>
+  </body>
+</html>

@@ -1,0 +1,134 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        form {
+            display: inline-block;
+            margin-right: 10px;
+        }
+
+        input[type="submit"] {
+            background-color: #d9534f;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            cursor: pointer;
+            border-radius: 4px;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #c9302c;
+        }
+
+        a {
+            text-decoration: none;
+            color: #333;
+            border: 1px solid #333;
+            padding: 10px 20px;
+            display: inline-block;
+            border-radius: 4px;
+        }
+
+        a:hover {
+            background-color: #333;
+            color: white;
+        }
+
+        ul {
+            list-style-type: none;
+            padding: 20px;
+            margin: 20px auto;
+            max-width: 600px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+        }
+  
+        li {
+            border-bottom: 1px solid #ddd;
+            padding: 10px;
+        }
+  
+        li:last-child {
+            border-bottom: none;
+        }
+  
+        span {
+            font-weight: bold;
+            margin-right: 5px;
+        }
+  
+        .actions {
+            margin-top: 10px;
+        }
+  
+        .actions a {
+            display: inline-block;
+            padding: 8px 12px;
+            margin-right: 10px;
+            text-decoration: none;
+            color: #fff;
+            border-radius: 4px;
+        }
+  
+        .actions .edit {
+            background-color: #5bc0de; /* Azul claro */
+        }
+  
+        .actions .edit:hover {
+            background-color: #46b8da; /* Azul mais escuro ao passar o mouse */
+        }
+  
+        .actions .delete {
+            background-color: #d9534f; /* Vermelho */
+        }
+  
+        .actions .delete:hover {
+            background-color: #c9302c; /* Vermelho mais escuro ao passar o mouse */
+        }
+  
+        a[name="return"] {
+            background-color: #d9534f;
+            color: white;
+            padding: 10px 15px;
+            text-decoration: none;
+            border-radius: 4px;
+            display: block;
+            margin-top: 20px;
+            text-align: center;
+        }
+  
+        a[name="return"]:hover {
+            background-color: #c9302c;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <p>Do you really want to delete the following student?</p>
+      <ul>
+        <li>
+            <span>Name:</span>{{u.name}}<br>
+            <span>Birth:</span>{{u.birth}}<br>
+            <span>Gender:</span>{{u.gender}}<br>
+            <span>CPF:</span>{{u.cpf}}<br>
+            <span>Register:</span>{{u.register}}
+        </li>
+      </ul>
+        <form method="post" action="/users/delete/{{u.id}}">
+            <input type="submit" value="Yes">
+        </form>
+        <a href='/'>Cancel</a>
+    </div>
+</body>
+</html>
